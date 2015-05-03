@@ -7,7 +7,6 @@ public class PickFourCards extends JFrame{
 	public static void main(String[] args) {
 	
 		JFrame frame = new PickFourCards();
-		JButton jbtRefresh = new JButton("Refresh");
 		frame.setTitle("Pick Four Cards");
 		frame.setLocationRelativeTo(null); 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -15,6 +14,8 @@ public class PickFourCards extends JFrame{
 		frame.setVisible(true);
 		
 	}
+	
+	JButton jbtRefresh = new JButton("Refresh");
 	
 	ImageIcon[] cards = new ImageIcon[52];
 	public JLabel card1;
@@ -64,7 +65,7 @@ public class PickFourCards extends JFrame{
 		jbtRefresh.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 			
-			panel1.repaint();
+			p2.repaint();
 			for(int i = 0; i < deck.length; i++)
 				deck[i] = i;
 			
@@ -82,7 +83,7 @@ public class PickFourCards extends JFrame{
 			card4.setIcon(cards[deck[3]]);
 
 			}
-		}
+		});
 	}
 }
 
