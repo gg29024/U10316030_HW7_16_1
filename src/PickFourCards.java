@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class PickFourCards extends JFrame{
-	public static void main(String[] args) {
 	
+	public static void main(String[] args) {
+		
 		JFrame frame = new PickFourCards();
 		frame.setTitle("Pick Four Cards");
 		frame.setLocationRelativeTo(null); 
@@ -31,7 +32,7 @@ public class PickFourCards extends JFrame{
 		int[] deck = new int[52];
 		
 		for(int i = 0 ; i < cards.length ; i ++){
-			cards[i] = new ImageIcon((getClass().getResource("image/card/" + (i+1) +".png")));
+			cards[i] = new ImageIcon((getClass().getResource("card/" + (i+1) +".png")));
 		}
 		
 		// Initialize cards
@@ -85,7 +86,11 @@ public class PickFourCards extends JFrame{
 			}
 		});
 	}
+
+
+
 }
+
 
 
 
