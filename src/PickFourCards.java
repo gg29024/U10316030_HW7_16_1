@@ -27,9 +27,11 @@ public class PickFourCards extends JFrame{
 	JPanel p1 = new JPanel();
 	JPanel p2 = new JPanel();
 	
+	int[] deck = new int[52];
+	
 	public PickFourCards(){
 	
-		int[] deck = new int[52];
+		
 		
 		for(int i = 0 ; i < cards.length ; i ++){
 			cards[i] = new ImageIcon((getClass().getResource("card/" + (i+1) +".png")));
@@ -63,8 +65,12 @@ public class PickFourCards extends JFrame{
 		this.add(p1,BorderLayout.SOUTH);
 		this.add(p2,BorderLayout.CENTER);
 		
-		jbtRefresh.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e) {
+		jbtRefresh.addActionListener(new RefreshCardsListener());
+		
+	}
+	
+	class RefreshCardsListener implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
 			
 			p2.repaint();
 			for(int i = 0; i < deck.length; i++)
@@ -84,10 +90,8 @@ public class PickFourCards extends JFrame{
 			card4.setIcon(cards[deck[3]]);
 
 			}
-		});
 	}
-
-
+	
 
 }
 
